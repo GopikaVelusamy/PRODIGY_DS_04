@@ -1,40 +1,4 @@
-'''import pandas as pd
-import matplotlib.pyplot as plt
-from textblob import TextBlob
 
-# Step 1: Load your data
-# Replace 'path_to_your_dataset.csv' with the path to the dataset you downloaded from Kaggle
-df = pd.read_csv('C:\\Users\\kavit\\AppData\\Local\\Temp\\26fd8d62-7b25-4046-9d71-1344afeeabca_archive (3).zip.bca\\twitter_validation.csv')
-
-# Step 2: Preprocess the data
-# Simple preprocessing: removing any NaN values in the text column
-df.dropna(subset=['text'], inplace=True)
-
-# Step 3: Sentiment Analysis
-# Applying TextBlob to compute sentiment polarity
-df['polarity'] = df['text'].apply(lambda x: TextBlob(x).sentiment.polarity)
-
-# Step 4: Visualization of Sentiment Analysis
-# Histogram of sentiment polarity
-plt.figure(figsize=(10, 6))
-plt.hist(df['polarity'], bins=50, color='blue')
-plt.title('Sentiment Polarity Distribution')
-plt.xlabel('Sentiment Polarity')
-plt.ylabel('Frequency')
-plt.grid(True)
-plt.show()
-
-# Additional visualization could be sentiment over time if timestamp data is available
-if 'timestamp' in df.columns:
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
-    df.set_index('timestamp', inplace=True)
-    df.resample('D').mean()['polarity'].plot(figsize=(12, 6), marker='o', linestyle='-')
-    plt.title('Daily Sentiment Polarity')
-    plt.xlabel('Date')
-    plt.ylabel('Average Sentiment Polarity')
-    plt.grid(True)
-    plt.show()
-'''
 import pandas as pd
 import matplotlib.pyplot as plt
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
